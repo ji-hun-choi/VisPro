@@ -563,4 +563,8 @@ pip-selfcheck.json
 .history
 .ionide
 
+
+!include/
+!include/*.hpp
+
 # End of https://www.toptal.com/developers/gitignore/api/python,c++,pycharm,pycharm+all,clion,clion+all,cmake,venv,visualstudiocode
