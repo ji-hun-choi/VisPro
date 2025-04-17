@@ -1,5 +1,5 @@
 epochs: 5
 batch_size: 64
 learning_rate: 0.001
-output_path: ./models/cnn_mnist.onnx
+output_path: ./weights/cnn_mnist.onnx
 model_name: cnn_mnist
