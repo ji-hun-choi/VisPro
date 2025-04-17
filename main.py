@@ -2,6 +2,7 @@ import argparse
 import yaml
 import os
 import urllib.request
+from train import get_trainer
 
 
 def load_config(model_name):
@@ -42,26 +43,24 @@ def check_and_download_data(model_name):
     else:
         print(f"No automatic dataset available for {model_name}. Please place the dataset in {data_dir}")
 
-
 def main():
     parser = argparse.ArgumentParser(description="VisPro Trainer")
-    parser.add_argument('--model', type=str, required=True, help="Model name (e.g., cnn_mnist, dnn_fashion, yolov5)")
+    parser.add_argument('--algorithm', type=str, required=True,
+                        help="algorithm name (e.g., cnn, dnn, yolo)")
+    parser.add_argument('--dataset', type=str, required=True,
+                        help="Dataset name (e.g., mnist, fashion, cifar10)")
+    parser.add_argument('--model', type=str, required=True,
+                        help="Model name (e.g., cnn, resnet18, efficientnet_b0, yolov5)")
     args = parser.parse_args()
 
-    config = load_config(args.model)
-    check_and_download_data(args.model)
+    dataset_name = args.algorithm + "_" + args.dataset
 
-    if args.model.startswith("cnn"):
-        from train import cnn_train
-        cnn_train.run(config)
-    elif args.model.startswith("dnn"):
-        from train import dnn_train
-        dnn_train.run(config)
-    elif args.model.startswith("yolo"):
-        from train import detect_train
-        detect_train.run(config)
-    else:
-        raise ValueError("Unsupported model type")
+    config = load_config(dataset_name)
+    config["model"] = args.model
+
+    check_and_download_data(dataset_name)
+
+    get_trainer(args.algorithm)(config)
 
 
 if __name__ == "__main__":
