@@ -57,6 +57,28 @@ VisPro/
 
 ---
 
+## 📊 모델 구성 계획
+
+### 1️⃣ CNN (분류기)
+- [x] MNIST 분류기 (단순 CNN)
+
+### 2️⃣ DNN (Fully Connected)
+- [x] Fashion-MNIST and CIFAR-10 데이터 셋 활용하기
+- [ ] Resnet18 DNN
+- [ ] Efficientnet_b0 DNN
+
+### 3️⃣ Object Detection
+- [ ] YOLOv7
+- [ ] YOLOv8
+- [ ] SSD or Faster R-CNN (추천 모델 포함 예정)
+
+### 4️⃣ Segmentation
+- [ ] UNet
+- [ ] DeepLabV3
+- [ ] SegNet 또는 기타 추천 모델
+
+---
+
 ## ⚙️ 빌드 및 실행 (C++ Inference)
 
 ```bash
@@ -71,6 +93,11 @@ make
 
 ## ✅ 개발 예정 항목 (TODO)
 
+- [x] CNN: MNIST 분류기 모델 학습 및 ONNX 변환
+- [x] 모델 TensorRT 엔진 파일로 변환
+- [ ] DNN: 대표 분류 모델 2종 학습 및 변환
+- [ ] Detection: YOLOv5 / YOLOv8 / SSD 또는 Faster R-CNN
+- [ ] Segmentation: UNet / DeepLabV3 / SegNet
 - [ ] 모델별 추론 클래스 분리 (예: `CNNInfer`, `Detector`)
 - [ ] 공통 추론 인터페이스 설계
 - [ ] 성능 측정 툴 및 시각화
@@ -80,5 +107,5 @@ make
 
 ## 👨‍💻 작성자
 
-> 개발자: [Your Name]  
+> 개발자: ji-hun-choi
 > 비전 AI 통합 프로젝트 VisPro는 실무 및 포트폴리오용으로 제작되었습니다.

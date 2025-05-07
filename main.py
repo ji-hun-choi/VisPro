@@ -48,9 +48,9 @@ def main():
     parser.add_argument('--algorithm', type=str, required=True,
                         help="algorithm name (e.g., cnn, dnn, yolo)")
     parser.add_argument('--dataset', type=str, required=True,
-                        help="Dataset name (e.g., mnist, fashion, cifar10)")
+                        help="Dataset name (e.g., mnist, fashion, cifar10, coco128)")
     parser.add_argument('--model', type=str, required=True,
-                        help="Model name (e.g., cnn, resnet18, efficientnet_b0, yolov5)")
+                        help="Model name (e.g., cnn, resnet18, efficientnet_b0, yolo5n, yolo8n)")
     args = parser.parse_args()
 
     dataset_name = args.algorithm + "_" + args.dataset
