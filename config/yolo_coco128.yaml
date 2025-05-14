@@ -1,0 +1,6 @@
+batch: 16
+data_yaml: coco128.yaml
+epochs: 10
+img_size: 640
+model: yolo11n
+output_path: ./models/yolov11n.onnx

@@ -1,9 +1,10 @@
-from train import cnn_train, dnn_train, yolo_train
+from train import cnn_train, dnn_train, yolo_train, seg_train
 
 TRAIN_REGISTRY = {
     "cnn": cnn_train.run,
     "dnn": dnn_train.run,
     "yolo": yolo_train.run,
+    "seg": seg_train.run
 }
 
 

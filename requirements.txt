@@ -1,0 +1,14 @@
+# 필수
+torch==2.6.0
+torchvision==0.21.0
+torchaudio==2.6.0
+
+PyYAML
+numpy
+
+onnx==1.17.0
+onnxruntime==1.21.0
+onnxsim==0.4.36
+
+# 선택 (이미지 입출력)
+pillow==11.0.0  # 이미지 파일 로딩/저장 필요 시
